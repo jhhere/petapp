@@ -1,8 +1,19 @@
-function SignUpCtrl($scope) {
+function SignUpCtrl($scope, $resource) {
 
-	  $scope.pets = [1]
+	  $scope.client;
+	  $scope.pets = [{name: ""}]
 
-	$scope.addPetForm = function() {
-		$scope.pets.push({});
+	  $scope.submit = function() {
+	  	var clientService = $resource('/clients/:id', {id: '@id'});
+
+	  	$scope.client.pets_attributes = $scope.pets;
+	  	var client = clientService.save($scope.client);
+
+	  	console.log(client);
+
+	  }
+
+	$scope.addPetRow = function() {
+		$scope.pets.push({name:""});
 	}
 }
