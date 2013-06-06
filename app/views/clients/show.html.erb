@@ -1,2 +1,14 @@
-<h1>Clients#show</h1>
+<h1>Client Details</h1>
+
+Name: <%= @client.first_name %>
+<%= @client.last_name %> | <%= link_to "Edit", edit_client_path %>
+
+<p><%= @client.home_phone %> <br>
+<%= @client.work_phone %>
+</p>
+
+Rate: <p><%= @client.rate %></p>
+Notes: <p><%= @client.notes %></p>
+
+
 <p>Find me in app/views/clients/show.html.erb</p>

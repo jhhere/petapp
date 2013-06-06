@@ -1,2 +1,8 @@
-<h1>Clients#index</h1>
+<h1>All Clients</h1>
+
+<% @clients.each do |client| %>
+  <p><%= link_to "#{client.first_name} #{client.last_name} - #{client.rate}", client_path(client) %> | <%= link_to "Edit", edit_client_path(client) %>
+  </p>
+<% end %>
+
 <p>Find me in app/views/clients/index.html.erb</p>
