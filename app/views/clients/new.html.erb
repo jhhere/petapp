@@ -23,10 +23,20 @@
     <%= f.label :notes %>
     <%= f.text_area :notes, rows:'5' %>
 
+    <div ng-repeat="pet in pets">
+      Pet name: <input type="text" name="petname{{$index}}">
+    </div>
+
+    <p>
+    <button type="button" ng-click="addPetForm()">Add Pet</button>
+    </p>
+
     <%= f.submit "Create Client", class:"btn-large btn-primary" %>
     
   <% end %>
-  
+
+     
+
   </div>
 </div>
 

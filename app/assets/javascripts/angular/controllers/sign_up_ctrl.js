@@ -1,3 +1,8 @@
 function SignUpCtrl($scope) {
-	alert("Yes");
+
+	  $scope.pets = [1]
+
+	$scope.addPetForm = function() {
+		$scope.pets.push({});
+	}
 }
